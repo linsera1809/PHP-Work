@@ -1,5 +1,5 @@
 <?php
-    session_start(); //this needs to be before all coding if using a session
+    //session_start(); //this needs to be before all coding if using a session
 ?>
 <html>
 <head>
@@ -31,10 +31,11 @@ function sanitize( $string ){ //removes all of the special chars and slashes
 
 function handler( $first_name, $last_name, $email ) { //Driver function
 
-    //Commenting out to test sessions
-    //setcookie('newsletter_signup_first_name', $first_name, time() + 86400); //one day = 86400s
 
-    $_SESSION['subscribe_form_first_name'] = $first_name;
+    setcookie('newsletter_signup_first_name', $first_name, time() + 86400); //one day = 86400s
+
+    //Commenting out to test cookies
+    // $_SESSION['subscribe_form_first_name'] = $first_name;
 
     header( "Location: http://192.168.33.10/TutorialPHP/thanks.php" );
 

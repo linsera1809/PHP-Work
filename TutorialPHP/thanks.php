@@ -16,7 +16,7 @@
 
     }
 
-    session_start(); //this needs to be before all coding if using a session
+     //session_start(); //this needs to be before all coding if using a session
 ?>
 
 <html lang="en">
@@ -28,28 +28,30 @@
 
 <?php
 
-/*
+
 
     //Commenting out to practice the use of sessions. This is for cookies
     if ( isset( $_COOKIE['newsletter_signup_first_name'] ) ) { //if there is a cookie for first name
 
         $first_name = $_COOKIE['newsletter_signup_first_name'];
 
-        echo "<h1> Thanks for joining our newsletter, <?php echo $first_name ?>!</h1>";
+        echo "<h1> Thanks for joining our newsletter, $first_name!</h1>";
 
         setcookie( 'newsletter_signup_first_name', null, time()- 1);
         //setting a cookie in the past deletes it. Deleting cookies after use is good practice
- */
+ /*
 
     if ( isset( $_SESSION['subscribe_form_first_name'] ) ) { //if there is a session running
 
         $first_name = $_SESSION['subscribe_form_first_name'];
 
-        echo "<h1> Thanks for joining our newsletter, <?php echo $first_name ?>!</h1>";
+        echo "<h1> Thanks for joining our newsletter, <?php echo $first_name ?> !</h1>";
 
         $_SESSION['subscribe_form_first_name'] = null;
 
+ */
 }
+
 
     try {
 
@@ -76,6 +78,6 @@
 </html>
 
 <?php
-    session_unset(); //This needs to be done after all coding if using a session
-    session_destroy(); //Cleanly destroys and closes
+    //session_unset(); //This needs to be done after all coding if using a session
+    //session_destroy(); //Cleanly destroys and closes
 ?>
